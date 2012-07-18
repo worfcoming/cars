@@ -1,0 +1,10 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $promotion_goods} -->
+<!--{foreach from=$promotion_goods item=goods name="promotion_foreach"}-->
+<DIV class=produce>
+<DIV class=producepic ><a href="{$goods.url}" ><img src="{$goods.thumb}" border="0" alt="{$goods.name|escape:html}" /></a></DIV>
+<DIV class=producename><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}</a></DIV>
+<DIV class=newprice2>{$lang.promote_price}<SPAN class=red9>{$goods.promote_price}</SPAN></DIV></DIV>
+<!--{/foreach}-->
+<!-- {/if} -->
+

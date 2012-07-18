@@ -1,0 +1,71 @@
+body{
+	margin:0;
+	padding:0;
+}
+/*头部样式*/
+.itop,.itopy,.itopl,.itopr,.ilogo,inav,.icity{
+	overflow:hidden;
+}
+.itop{
+	height:30px;
+	background-color:#f9f9f9;
+	border-bottom:1px solid #efefef;
+}
+.itopy,.ilogo,.icity{
+	width:960px;
+	margin:0 auto;
+}
+.itopl{
+	float:left;
+}
+.disc,.lrg{
+	overflow:hidden;
+	line-height:30px;
+	margin-right:18px;
+	float:left;
+}
+.itopy a{
+	text-decoration:none;
+}
+.itopr{
+	float:right;
+}
+.trlink{
+	float:left;
+	margin-left:18px;
+	line-height:30px;
+}
+.inav{
+	height:30px;
+	background-color:#ffcc66;
+}
+.icity{
+	line-height:30px;
+}
+.icity a{
+	text-decoration:none;
+}
+.icar{
+	float:right;
+}
+
+
+/*车型选择部分*/
+.cbrand{
+	width:126px;
+	height:26px;
+	padding-left:2px;
+	padding-top:1px;
+	background:url(../images/selbg.png) no-repeat -3px;
+	border:none;
+	cursor:pointer;
+}
+.isel{
+	width:126px;
+	float:left;
+}
+.xiala{
+	width:450px;
+	height:300px;
+	border:1px solid #CCC;
+}

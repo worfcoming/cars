@@ -1,0 +1,36 @@
+{include file="pageheader.htm"}
+
+<div class="list-div" style="margin-bottom: 5px; margin-top: 10px;" id="listDiv">
+<form method="post" action="csys.php?act={$act}"  >
+<table cellspacing="1" cellpadding="3" width="100%">
+  <tr>
+    <td class="label">请选择车品牌</td>
+    <td>
+    <select onchange="hideCatDiv()" name="cb_name">
+    <option value="">请选择...</option>
+    {foreach from=$csys item=sys}
+    <option {if $cbname eq $sys.id}selected="selected"{/if} value="{$sys.id}">{$sys.cbrand_name}</option>
+    {/foreach}
+    </select>
+    </td>
+  </tr>
+  <tr>
+    <td class="label">车系名称</td>
+    <td><input type="text" name="csys_name" size="40" value="{$csname}">
+    </td>
+  </tr>
+    <tr>
+    <td class="label">生产公司</td>
+    <td><input type="text" name="csys_com" size="40" value="{$cscom}">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><br />
+      <input type="hidden" name = "csid" value="{$csid}" />
+      <input type="submit" class="button" value="{$lang.button_submit}" />
+    </td>
+  </tr>
+</table>
+</form>
+</div>
+{include file="pagefooter.htm"}

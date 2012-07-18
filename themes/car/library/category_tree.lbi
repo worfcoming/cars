@@ -1,0 +1,66 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="icat">
+<div class="chead">
+<div class="gcat selc">
+按商品分类
+</div>
+<div class="ccat">
+按特色分类
+</div>
+</div>
+
+<div id="goodscat">
+<!--{foreach from=$categories item=cat}-->
+<div class="cati">
+<div class="catittle">
+<div class="catp">{$cat.name|escape:html}</div>
+</div>
+<ul>
+<!--{foreach from=$cat.cat_id item=child}-->
+<li><a href="{$child.url}">{$child.name|escape:html}<span>({$child.num})</span></a></li>
+<!--{/foreach}-->
+</ul>
+</div>
+<!--{/foreach}--> 
+</div>
+
+<div id="specat">
+<div class="cati">
+<div class="catittle">
+<div class="catp">夏季保养</div>
+</div>
+<ul>
+<li><a href="">洗车<span>(123)</span></a></li>
+<li><a href="">封釉<span>(43)</span></a></li>
+<li><a href="">洗车器/设备<span>(17)</span></a></li>
+<li><a href="">清洁巾/掸子<span>(33)</span></a></li>
+</ul>
+</div>
+
+<div class="cati">
+<div class="catittle">
+<div class="catp">夏季保养</div>
+</div>
+<ul>
+<li><a href="">洗车<span>(123)</span></a></li>
+<li><a href="">封釉<span>(43)</span></a></li>
+<li><a href="">洗车器/设备<span>(17)</span></a></li>
+<li><a href="">清洁巾/掸子<span>(33)</span></a></li>
+</ul>
+</div>
+
+<div class="cati">
+<div class="catittle">
+<div class="catp">夏季保养</div>
+</div>
+<ul>
+<li><a href="">洗车<span>(123)</span></a></li>
+<li><a href="">封釉<span>(43)</span></a></li>
+<li><a href="">洗车器/设备<span>(17)</span></a></li>
+<li><a href="">清洁巾/掸子<span>(33)</span></a></li>
+</ul>
+</div>
+
+</div>
+
+</div>

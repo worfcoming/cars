@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{$lang.cp_home}{if $ur_here} - {$ur_here} {/if}</title>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+<link href="styles/main.css" rel="stylesheet" type="text/css" />
+{insert_scripts files="transport_org.js,car_org.js,jquery-1.3.2.min.js,jquery.json-1.3.js"}
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+</head>
+<body>
+
+<h1>
+{if $action_link}
+<span class="action-span"><a href="{$action_link.href}">{$action_link.text}</a></span>
+{/if}
+{if $action_link2}
+<span class="action-span"><a href="{$action_link2.href}">{$action_link2.text}</a>&nbsp;&nbsp;</span>
+{/if}
+<span class="action-span1"><a href="index.php?act=main">后台管理中心</a> </span><span id="search_id" class="action-span1">{if $ur_here} - {$ur_here} {/if}</span>
+<div style="clear:both"></div>
+</h1>
+
+
+<div class="list-div">
+<table width="100%" id="car-table" align="center">
+ <tr>
+      <th colspan="20" scope="col" id="gname">{$goods_name}</th>
+    </tr>
+            <tr>
+        <td bgcolor="#ffffff" align="center">是否通用</td>
+        <td bgcolor="#ffffff" align="center"><input type="checkbox" value="{$gid}" id="is_common" {if $is_common eq 1} checked="checked"{/if}>是</td>
+		</tr>
+      <tr align="center">
+        <th width="20%" bgcolor="#ffffff">品牌</th>
+        <th width="20%" bgcolor="#ffffff">车系</th>
+        <th width="30%" bgcolor="#ffffff">车款</th>
+        <th width="15%" bgcolor="#ffffff">操作</th>
+      </tr>
+       {foreach from=$gcars item=icar}
+      <tr>
+        <td bgcolor="#ffffff" align="center">{$icar.cbrand_name}</td>
+        <td bgcolor="#ffffff" align="center">{$icar.csys_name|default:------}</td>
+        <td bgcolor="#ffffff" align="center">{$icar.ctype_name|default:------}</td>
+        <td bgcolor="#ffffff" align="center"><a onclick="javascript:dlcar({$icar.id})" href="javascript:void(0)">删除</a></td>
+      </tr>
+	{/foreach}
+    <form method="post" action="" id="addform">
+    <tr>
+        <td bgcolor="#ffffff" align="center">
+        <select onchange="callbrand(this.value)" name="cbrand" id="cb">
+            <option value="">请选择品牌</option>
+            {foreach from=$cb item=cb}
+            <option value="{$cb.id}">{$cb.cbrand_name}</option>
+            {/foreach}
+            </select>
+        </td>
+        <td bgcolor="#ffffff" align="center">
+        <select onchange="callsys(this.value)" name="csys" id='cx'>
+            <option value="">请选择车系</option>
+         </select>
+        </td>
+        <td bgcolor="#ffffff" align="center">
+        <select name="ctype" id='ck'>
+    	<option value="">请选择车款</option>
+    	</select>
+        </td>
+        <td bgcolor="#ffffff" align="center">
+        <input type="hidden" name="gid" value="{$gid}" id="gid" />
+        <input type="button" value="新增" id="addcars" />
+        </td>
+      </tr>
+     </form>   
+        </table>
+</div>        
+        
+        
+        
+<div id="footer">
+{$query_info}{$gzip_enabled}{$memory_info}<br />
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+        $("#is_common").change(function() {
+            if (!$(this).attr("checked")) {
+                var conf=window.confirm("确定取消通用？");
+				var gid=$(this).val();
+				if(conf){
+				   window.location.href ="goodscars.php?act=un_common&gid="+gid;
+			   }else{
+				  $(this).attr("checked", "ture");  
+			   }
+            }else if($(this).attr("checked")){
+               var conf=window.confirm("选为通用将自动删除所有已关联的车型");
+			   var gid=$(this).val();
+			   if(conf){
+				 window.location.href ="goodscars.php?act=is_common&gid="+gid;
+			   }else{
+				  $(this).removeAttr("checked");  
+			   }
+            }
+        });
+ 
+ 
+ 		$("#addcars").click(function() {
+			var gid = $("#gid").val();
+			var cbrand = $("#cb").val();
+			var csys = $("#cx").val();
+			var ctype = $("#ck").val();
+			var gname = $("#gname").text();
+			var cbname = $("#cb").find("option:selected").text();
+			var csname = $("#cx").find("option:selected").text();
+			if(!cbrand){
+			alert ("请选择品牌");
+			}else{
+				if(!csys){
+					var conf=window.confirm("此操作将自动删除本商品与"+cbname+"品牌下的车系和车型的关联");
+					if(conf){
+						$("#addform").attr("action","goodscars.php?act=add_blink").submit();
+			                }
+				}else{
+					if(!ctype){
+					var conf=window.confirm("此操作将自动删除本商品与"+cbname+"品牌或者"+csname+"车系下的车型的关联");	
+					if(conf){
+				           $("#addform").attr("action","goodscars.php?act=add_slink").submit();
+			                }	
+					}else{
+						var conf=window.confirm("此操作将自动删除本商品与"+cbname+"品牌或者"+csname+"车系的关联");
+						if(conf){
+				              $("#addform").attr("action","goodscars.php?act=add_tlink").submit();
+			                    }
+					}
+				}
+			}
+		});
+ 
+ });
+function dlcar(lid){
+	var conf=window.confirm("确定删除？");
+	if(conf){
+		window.location.href ="goodscars.php?act=dlcar&lid="+lid;
+	}
+}
+</script>

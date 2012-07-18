@@ -1,0 +1,101 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="blank"></div>
+<!--{if $helps}-->
+<DIV class=footertop>
+<DIV class=footerlink>
+<DIV>消费资讯：<A href="#" target=_blank>购物资讯</A>&nbsp;|&nbsp;<A href="#" target=_blank>企业采购</A>&nbsp;|&nbsp;<A 
+href="#" target=_blank>超市一览表</A>&nbsp;|&nbsp;<A href="#" target=_blank>所有商品表</A>&nbsp;|&nbsp;<A href="#" target=_blank>葡萄酒</A>&nbsp;|&nbsp;<A href="#" target=_blank>食用油</A>&nbsp;|&nbsp;<A href="#" target=_blank>乐扣乐扣</A>&nbsp;|&nbsp;<A href="#" 
+target=_blank>婴儿配方奶粉</A>&nbsp;|&nbsp;<A href="#" target=_blank>更多资讯</A></DIV></DIV>
+<DIV class=quicklink>
+<!-- {foreach from=$helps item=help_cat name=helps} -->
+<!--{if $smarty.foreach.helps.iteration <=5}-->
+<DIV class=quicklinkbox>
+<DIV class=quicklinkboxtitle><a href='{$help_cat.cat_id}' title="{$help_cat.cat_name}">{$help_cat.cat_name}</a></DIV>
+<UL>
+  <!-- {foreach from=$help_cat.article item=item} -->
+  <LI><a href="{$item.url}" title="{$item.title|escape:html}">{$item.short_title}</a></LI>
+  <!-- {/foreach} -->
+  </UL></DIV>
+<!--{/if}-->
+<!-- {/foreach} -->
+  
+  </DIV></DIV>
+<!--{/if}-->
+
+ 
+ <div class="blank"></div>
+ 
+ 
+<DIV class=footerbanner id=footerbannerLazyLoad>
+<UL>
+  <LI><A href="#" target=_blank><IMG src="images/footer_pic_01.gif"></A> </LI>
+  <LI><A href="#" target=_blank><IMG src="images/footer_pic_02.gif"></A> </LI>
+  <LI><A href="#" target=_blank><IMG src="images/footer_pic_03.gif"></A> </LI>
+</UL></DIV>
+<!-- {if $navigator_list.bottom} -->
+<DIV class=sitemap>
+<UL>
+  <!-- {foreach name=nav_bottom_list from=$navigator_list.bottom item=nav} -->
+	<LI><a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a></LI>
+	<!-- {if !$smarty.foreach.nav_bottom_list.last} -->
+	<LI>&nbsp;|&nbsp;</LI>
+	<!-- {/if} -->
+  <!-- {/foreach} -->
+</UL></DIV>
+<!-- {/if} -->
+
+ 
+
+
+<!--版权 start-->
+<div id="footer">
+ <div class="text">
+ {$copyright}<br />
+ {$shop_address} {$shop_postcode}
+ <!-- 客服电话{if $service_phone} -->
+      Tel: {$service_phone}
+ <!-- 结束客服电话{/if} -->
+ <!-- 邮件{if $service_email} -->
+      E-mail: {$service_email}<br />
+ <!-- 结束邮件{/if} -->
+ <!-- QQ 号码 {foreach from=$qq item=im} -->
+      <!-- {if $im} -->
+      <a href="http://wpa.qq.com/msgrd?V=1&amp;Uin={$im}&amp;Site={$shop_name}&amp;Menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:{$im}:4" height="16" border="0" alt="QQ" /> {$im}</a>
+      <!-- {/if} -->
+      <!-- {/foreach} 结束QQ号码 -->
+      <!-- 淘宝旺旺 {foreach from=$ww item=im} -->
+      <!-- {if $im} -->
+      <a href="http://amos1.taobao.com/msg.ww?v=2&uid={$im|escape:u8_url}&s=2" target="_blank"><img src="http://amos1.taobao.com/online.ww?v=2&uid={$im|escape:u8_url}&s=2" width="16" height="16" border="0" alt="淘宝旺旺" />{$im}</a>
+      <!-- {/if} -->
+      <!--{/foreach} 结束淘宝旺旺 -->
+      <!-- Yahoo Messenger {foreach from=$ym item=im} -->
+      <!-- {if $im} -->
+      <a href="http://edit.yahoo.com/config/send_webmesg?.target={$im}n&.src=pg" target="_blank"><img src="../images/yahoo.gif" width="18" height="17" border="0" alt="Yahoo Messenger" /> {$im}</a>
+      <!-- {/if} -->
+      <!-- {/foreach} 结束Yahoo Messenger -->
+      <!-- MSN Messenger {foreach from=$msn item=im} -->
+      <!-- {if $im} -->
+      <img src="../images/msn.gif" width="18" height="17" border="0" alt="MSN" /> <a href="msnim:chat?contact={$im}">{$im}</a>
+      <!-- {/if} -->
+      <!-- {/foreach} 结束MSN Messenger -->
+      <!-- Skype {foreach from=$skype item=im} -->
+      <!-- {if $im} -->
+      <img src="http://mystatus.skype.com/smallclassic/{$im|escape:url}" alt="Skype" /><a href="skype:{$im|escape:url}?call">{$im}</a>
+      <!-- {/if} -->
+  <!-- {/foreach} --><br />
+
+       
+ </div>
+
+
+</div>
+<DIV class=footerbanner2 id=footerbanner2LazyLoad>
+<UL>
+  <LI><A href="#" target=_blank><IMG src="images/footer_pic_09.gif"></A> 
+  <LI><A href="#" target=_blank><IMG src="images/footer_pic_04.gif"></A> 
+  <LI><A href="#" target=_blank><IMG src="images/footer_pic_05.gif"></A> 
+  <LI><A href="#" target=_blank><IMG src="images/footer_pic_06.gif"></A> 
+  <LI><A href="#" target=_blank><IMG src="images/footer_pic_07.gif"></A> 
+</LI></UL></DIV>
+
+
