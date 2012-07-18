@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<title>{$page_title}</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+{insert_scripts files='common.js,index.js'}
+</head>
+<body>
+<div class="body">
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="icontent">
+<div class="ileft">
+<div class="ilogo">
+<img src="images/logo3.png" alt="logo">
+</div>
+
+<!-- #BeginLibraryItem "/library/category_tree.lbi" --><!-- #EndLibraryItem -->
+</div>
+
+
+<div class="iright">
+<div class="guide">
+<a href="index.php">&nbsp;</a>
+<div class="hov">
+<a href="">商城</a>
+<a href="">资讯</a>
+<a href="">问答</a>
+</div>
+</div>
+
+<div class="flv">
+<div class="iflash">
+<!-- #BeginLibraryItem "/library/index_ad.lbi" --><!-- #EndLibraryItem -->
+</div>
+<div class="inews">
+<div class="ctypeimg">
+<img src="/data/ctypepic/ccc.png">
+</div>
+<div class="inewt">
+<span>资讯热点</span>
+</div>
+<ul>
+<li><a href="">奥迪新A4L或增3.0TFSI车型</a></li>
+<li><a href="">都市精英之旅将于9月举行</a></li>
+<li><a href="">2012款奥迪A4L正式上市</a></li>
+<li><a href="">改款奥迪A4L国内谍照首曝</a></li>
+<li><a href="">L优惠1万元现金看车团活动</a></li>
+<li><a href="">奥迪新A4L或增3.0TFSI车型</a></li>
+</ul>
+</div>
+</div>
+
+
+<div class="glist">
+<div class="gtittle"><div class="gtleft"></div><div class="gtcenter">专用商品推荐</div><div class="gtright"></div></div>
+<div class="gcon">
+<ul>
+<!--{foreach from=$best_goods item=goods}-->
+<li class="goodsbox">
+<div class="goodsimg">
+<a href="{$goods.url}" target="_blank"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}"></a>
+</div>
+<div class="goodstit">
+<a href="{$goods.url}" target="_blank"  title="{$goods.name|escape:html}">{$goods.short_style_name}</a>
+</div>
+<p class="goodsdes">{$goods.brief}</p>
+<p class="goodsprice">
+<!--{if $goods.promote_price neq "" } -->
+<span class="shopprice">{$goods.promote_price}</span>
+<!--{else}-->
+<span class="shopprice">{$goods.shop_price}</span>
+<!-- {/if} -->
+<span class="marketprice">{$goods.market_price}</span>
+<span class="buynum">已有<span class="bnum">{$goods.comment_count}</span>人评论</span>
+</p>
+</li>
+<!--{/foreach}-->
+</ul>
+</div>
+</div>
+
+<div class="glist">
+<div class="gtittle"><div class="gtleft"></div><div class="gtcenter">通用商品热卖推荐</div><div class="gtright"></div></div>
+<div class="gcon">
+<!--{foreach from=$hot_goods item=goods}-->
+<li class="goodsbox">
+<div class="goodsimg">
+<a href="{$goods.url}" target="_blank"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}"></a>
+</div>
+<div class="goodstit">
+<a href="{$goods.url}" target="_blank"  title="{$goods.name|escape:html}">{$goods.short_style_name}</a>
+</div>
+<p class="goodsdes">{$goods.brief}</p>
+<p class="goodsprice">
+<!--{if $goods.promote_price neq "" } -->
+<span class="shopprice">{$goods.promote_price}</span>
+<!--{else}-->
+<span class="shopprice">{$goods.shop_price}</span>
+<!-- {/if} -->
+<span class="marketprice">{$goods.market_price}</span>
+<span class="buynum">已有<span class="bnum">{$goods.comment_count}</span>人评论</span>
+</p>
+</li>
+<!--{/foreach}-->
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{if $user_info}
+<div class="lrg">
+{$user_info.username}
+</div>
+<div class="lrg">
+<a href="user.php{$curl}">{$lang.user_center}</a>|
+<a href="user.php?act=logout">{$lang.user_logout}</a>|
+</div>
+{else}
+<div class="lrg">
+<a href="user.php{$curl}">请登录</a>|
+</div>
+<div class="lrg">
+<a href="user.php?act=register&cid={$cid}">注册</a>|
+</div>
+{/if}

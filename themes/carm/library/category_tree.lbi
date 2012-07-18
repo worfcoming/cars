@@ -1,0 +1,43 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div id="categoriescon">
+   <div id="categoriescontitle">分类筛选</div>
+   <div id="categorieslist">
+     		<!-- showMore: 0<br/> -->
+		<!--{foreach from=get_categories_tree() item=cat}-->
+		<!--{if $current_cat_pr_id eq $cat.id}-->
+			<UL>
+	        <LI class="categorieslistlast">
+			<a href="{$cat.url}" class='mainmenuactive'>{$cat.name|escape:html}</a>
+            <UL>
+        	<!--{foreach from=$cat.cat_id item=child}-->
+			<LI>
+			<a href="{$child.url}" <!--{if $current_cat_id eq $child.id}-->class="selectedlist"<!--{else}--><!--{/if}-->>{$child.name|escape:html}</a>
+			<!--{if $child.cat_id and $current_cat_t_id eq $child.id}-->
+            <UL>
+        	<!--{foreach from=$child.cat_id item=childer}-->
+			<LI>
+			<a href="{$childer.url}" <!--{if $current_cat_id eq $childer.id}-->class="selectedlist"<!--{else}--><!--{/if}-->>{$childer.name|escape:html}</a>
+            </LI>
+			<!--{/foreach}--> 
+            </UL>
+			<!--{/if}-->
+            </LI>
+			<!--{/foreach}--> 
+            </UL>
+        </LI>
+			</UL>
+
+	 <!--{/if}-->
+	 <!--{if $current_cat_pr_id eq ''}-->
+			<UL>
+	        <LI class="categorieslistlast">
+			<a href="{$cat.url}" class='mainmenuactive'>{$cat.name|escape:html}</a>
+			</LI>
+			</UL>
+	 <!--{/if}-->
+	 <!--{/foreach}--> 
+			
+   </div> <!--categorieslist-->
+</div>
+<div class="blank"></div>
+

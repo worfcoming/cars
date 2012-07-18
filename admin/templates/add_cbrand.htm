@@ -1,0 +1,34 @@
+{include file="pageheader.htm"}
+<div class="list-div" style="margin-bottom: 5px; margin-top: 10px;" id="listDiv">
+<form method="post" action="cbrand.php?act={$act}" enctype="multipart/form-data" >
+<table cellspacing="1" cellpadding="3" width="100%">
+  <tr>
+    <td class="label">车品牌名称</td>
+    <td><input type="text" name="cbrand_name" maxlength="60" value="{$cname}" />
+  </tr>
+  <tr>
+    <td class="label">车品牌logo</td>
+    <td><input type="file" name="cbrand_logo" size="45" value="">
+    </td>
+  </tr>
+  
+    <tr>
+    <td class="label">前台是否显示</td>
+    <td>
+    <input type="radio" name="cbrand_sort" value="0" checked="checked">否
+    <input type="radio"{if $csort eq '1'}checked="checked"{/if} name="cbrand_sort" value="1">是
+    </td>
+  </tr>
+  
+  <tr>
+    <td colspan="2" align="center"><br />
+      <input type="hidden" name = "old_name" value="{$cname}" />
+      <input type="hidden" name = "cid" value="{$cid}" />
+       <input type="hidden" name = "old_img" value="{$clogo}" />
+      <input type="submit" class="button" value="{$lang.button_submit}" />
+    </td>
+  </tr>
+</table>
+</form>
+</div>
+{include file="pagefooter.htm"}

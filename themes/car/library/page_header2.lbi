@@ -1,0 +1,52 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/themes/car/css/common.css" rel="stylesheet" type="text/css" />
+{insert_scripts files='jquery-1.3.2.min.js,jquery.json-1.3.js'}
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+<div class="itop">
+	<div class="itopy">
+		<div class="itopl">
+        	<div class="disc">
+            	中国最大汽车服务网站
+            </div>
+            {insert name='member_info'}
+		</div>
+		<div class="itopr">
+        	<div class="trlink"><a href="flow.php">我的订单</a></div>
+            <div class="trlink"><a href="">商家入口</a></div>
+            <div class="trlink"><a href="">帮助中心</a></div>
+    	</div>
+	</div>
+</div>
+<div class="ilogo">
+<a href="index.php"><img src="../images/logo.png" alt="logo"></a>
+</div>
+<div class="inav">
+<div class="icity">
+我的城市:{$city|default:北京}[<a href="">切换</a>]
+<form action="" name="icar" class="icar">
+我的车型
+<select name="cbrand">
+<option>请选择品牌</option>
+<option>A奥迪</option>
+<option>B本田</option>
+<option>B别克</option>
+</select>
+<select name="csys">
+<option>请选择车系</option>
+<option>A4L</option>
+<option>A6L</option>
+<option>Q3</option>
+<option>Q5</option>
+</select>
+<select name="csys">
+<option>请选择车型</option>
+<option>A4L</option>
+<option>A6L</option>
+<option>Q3</option>
+<option>Q5</option>
+</select>
+</form>
+</div>
+</div>

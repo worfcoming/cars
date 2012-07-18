@@ -1,0 +1,17 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $best_goods} -->
+<!--{foreach from=$best_goods item=goods}-->
+<DIV class=produce>
+<DIV class=producepic><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a></DIV>
+<DIV class=producename><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></DIV>
+<DIV class=newprice2>
+<!-- {if $goods.promote_price neq ""} -->
+{$lang.promote_price}<SPAN class=red9>{$goods.promote_price}</SPAN>
+<!-- {else}-->
+{$lang.shop_price}<SPAN class=red9>{$goods.shop_price}</SPAN>
+<!--{/if}-->
+</DIV></DIV>
+<!--{/foreach}-->
+<!-- {/if} -->
+
+

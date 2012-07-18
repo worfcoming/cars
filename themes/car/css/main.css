@@ -1,0 +1,188 @@
+@charset "utf-8";
+/*全局样式*/
+*{margin:0;padding:0;text-align:left;word-wrap:break-word; /*自动折行*/}
+select,button,input,textarea {font-family:arial,helvetica,clean,sans-serif;font-size:100%;font-size-adjust:none;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;line-height:normal;margin:0px}
+ol,ul,li,dd,dt,dl{list-style:none;}/*自动折行*/
+em{font-style:normal;font-weight:normal;}/*让特殊标签字体统一*/
+:focus{outline:none;}/*让焦点没有虚线*/
+img{border:0;}/*让图片无边框*/
+
+/*link*/
+a{color:#888; text-decoration:none; cursor:pointer;}
+a:hover{color:#333 !important;text-decoration:none;}
+
+/*布局样式*/
+body{margin:0;padding:0; background:url(../images/background.jpg) repeat-x; text-shadow:#CCC 1px 1px 1px;}
+.top{
+	height:120px;
+	overflow:hidden;
+	background:url(../images/shadow_down.png) no-repeat -300px -84px;
+}
+.head{
+	width:960px;
+	overflow:hidden;
+	height:80px;
+	margin:0 auto;
+}
+.logo{
+	overflow:hidden;
+	float:left;
+}
+.city{
+	overflow:hidden;
+	float:left;
+	margin-top:50px;
+	font-size:18px;
+	font-weight:bold;
+}
+.city span{
+	margin-left:5px;
+	font-weight:100;
+	font-size:12px;
+}
+.center{
+	height:450px;
+	margin-top:-37px;
+	overflow:hidden;
+	background:url(../images/cbg.png) repeat-x;
+	width:100%;
+}
+.bottom{
+	height:175px;
+	overflow:hidden;
+    background:url(../images/shadow_up.png) no-repeat -300px -37px;
+}
+.login{
+	overflow:hidden;
+	margin-top:8px;
+	font-size:12px;
+	float:right;
+	color:#888;
+}
+.login a{
+	padding:0 3px;
+}
+.car{
+	float:left;
+	margin-top:49px;
+	margin-left:50px;
+}
+.selected{
+	overflow:hidden;
+	font-size:12px;
+	float:left;
+	color:#FFF;
+	line-height:27px;
+	text-align:center;
+	width:125px;
+	height:27px;
+	background:url(../images/car.png) no-repeat;
+}
+.select{
+	overflow:hidden;
+	float:left;
+	font-size:12px;
+	color:#FFF;
+	line-height:27px;
+	text-align:center;
+	width:125px;
+	height:27px;
+	background:url(../images/car.png) no-repeat 0px -25px;
+}
+.ctext{
+	overflow:hidden;
+	text-align:center;
+	cursor:pointer;
+}
+.sel{
+	width:360px;
+	color:#333;
+	height:300px;
+	overflow:hidden;
+	overflow-y:auto;
+	position:absolute;
+	display:none;
+	padding:8px;
+/*	border:1px solid #999;*/
+	*margin-left:-60px;
+	z-index:99;
+}
+.sel h5{
+	height:100%;
+	float:left;
+}
+.sel ul{
+	width:100%;
+	overflow:hidden;
+	display:block;
+}
+.sel a{
+	overflow:hidden;
+	float:left;
+	min-width:50px;
+	height:27px;
+	margin:0 3px;
+}
+.comn{
+	width:100%;
+	height:20px;
+	font-weight:bold;
+}
+
+.button6 {display:inline-block; width:200px; height:54px; line-height:26px;text-indent:-9990em; font-size:14px; background:url(../images/btn_in.png) top center;color:#fff; border:none; cursor:pointer; margin-left:30px; margin-top:10px;}
+a.button6 {color:#fff;}
+.bigBanner {height:350px; width:960px; margin:50px auto 10px auto; position:relative; background-color:#FFF;overflow:hidden;
+	border-radius:3px;
+	behavior:url(ie-css3.htc);}
+.bigBanner1 {height:350px; width:500px; position:relative;}
+.bigBanner2 {height:350px; width:480px; position:relative;}
+.bigTitle {height:350px; width:460px; position:absolute; top:0; left:500px;}
+.bigTitle #brImg{width:460px; height:240px; position:relative; margin-left:30px;}
+.bigBanner p{margin-left:60px; position:relative; display:inline;}
+.bigTitle .idx {display:inline-block; width:16px; height:30px; line-height:30px;text-indent:-9990em; font-size:14px; background:url(../images/btn_idx.png) bottom center; border:none; cursor:pointer;}
+
+.bot{
+	width:960px;
+	height:160px;
+	overflow:hidden;
+	margin:8px auto;
+	background:url(../images/buckets.png) bottom center no-repeat;
+}
+.bleft{
+	width:50%;
+	height:150px;
+	float:left;
+	border-right:1px solid #ccc;
+}
+.bright{
+	width:49%;
+	height:150px;
+	float:right;
+}
+.blp{
+	width:240px;
+	overflow:hidden;
+	float:left;
+	margin:8px;
+}
+.blp p{
+	font-size:12px;
+	color:#888;
+	line-height:28px;
+}
+.bpic{
+	float:right;
+	margin:8px;
+}
+.foot{
+	width:960px;
+	height:50px;
+	overflow:hidden;
+	margin:8px auto;
+	font-size:12px;
+	color:#888;
+	text-align:center;
+}
+.foot a{
+	padding:0 8px;
+}

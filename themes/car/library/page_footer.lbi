@@ -1,0 +1,37 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div id="footer1">
+<!-- {foreach from=$helps item=help_cat name=x} -->
+<div id="fot1">
+<p><img  src="images/x{$smarty.foreach.x.index}.gif"/></p>
+<ul >
+<!-- {foreach from=$help_cat.article item=item} -->
+<li><a href="{$item.url}">{$item.short_title}</a></li>
+<!-- {/foreach} -->
+</ul>
+</div>
+<!-- {/foreach} -->
+
+<div id="fot5">
+<p><img  src="images/sj.gif"/></p>
+&nbsp;&nbsp;&nbsp;<p id="p">业务咨询:4000 111 168</p>
+</div>
+<div id="fot6" ><img src="images/cx.gif"/></div>
+</div>
+
+<div id="footer2"  >
+ <ul>
+ <li ><a href="#">关于爱卡</a> |</li>
+ <li><a href="#">招贤纳士</a> |</li>
+ <li><a href="#">联系我们</a> |</li>
+ <li><a href="#">友情链接</a> |</li>
+ <li><a href="#">爱卡首页</a> |</li>
+ <li><a href="#">选车中心</a> |</li>
+ <li><a href="#">汽车论坛</a> |</li>
+ <li><a href="#">站点地图</a> |</li>
+  <li><a href="#">意见反馈</a> |</li>
+ <li><a href="#">收藏爱车</a>  |</li>
+ <li><a href="#">手机爱卡</a></li>
+ </ul><pre>联系地址:北京市海淀知春路113号银网中心B座16层  邮编:100086 电话:010-82616677-1000 传真:010-62556006
+    京ICP备09041801号-119  京ICP整:010319号  京公网安备:110108902134
+	   COPYRIGHT Xcar.com.cn.All.Right Reserved</pre>
+</div>

@@ -1,0 +1,127 @@
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,listtable.js"}
+
+<div class="list-div" style="margin-bottom: 5px; margin-top: 10px;" id="listDiv">
+<form method="post" action="ctype.php?act={$act}"  enctype="multipart/form-data" >
+<table cellspacing="1" cellpadding="3" width="100%">
+  <tr>
+    <td class="label">请选择品牌及车系</td>
+    <td>
+    <select onchange="callbrand(this.value)" name="cb_name">
+    <option value="0">请选择品牌</option>
+    {foreach from=$cb item=cb}
+    <option {if $ctype.cb_name eq $cb.id}selected="selected"{/if} value="{$cb.id}">{$cb.cbrand_name}</option>
+    {/foreach}
+    </select>
+    <select onchange="" name="csys_id" id='cx'>
+    <option value="{$ctype.csys_id}">{if $ctype.csys_name neq ''}{$ctype.csys_name}{else}请选择车系{/if}</option>
+    {foreach from=$csys item=csys}
+    <option value="{$csys.id}">{$csys.csys_name}</option>
+    {/foreach}
+    </select>
+    </td>
+  </tr>
+
+  
+    <tr>
+    <td class="label">年款</td>
+    <td>
+    <select name="ctype_year">
+    <option>2012款</option>
+    <option {if $ctype.ctype_year eq '2011款'}selected="selected"{/if}>2011款</option>
+    <option {if $ctype.ctype_year eq '2010款'}selected="selected"{/if}>2010款</option>
+    <option {if $ctype.ctype_year eq '2009款'}selected="selected"{/if}>2009款</option>
+    <option {if $ctype.ctype_year eq '2008款'}selected="selected"{/if}>2008款</option>
+    <option {if $ctype.ctype_year eq '2007款'}selected="selected"{/if}>2007款</option>
+    <option {if $ctype.ctype_year eq '2006款'}selected="selected"{/if}>2006款</option>
+    <option {if $ctype.ctype_year eq '2005款'}selected="selected"{/if}>2005款</option>
+    <option {if $ctype.ctype_year eq '2004款'}selected="selected"{/if}>2004款</option>
+    <option {if $ctype.ctype_year eq '2003款'}selected="selected"{/if}>2003款</option>
+    <option {if $ctype.ctype_year eq '2002款'}selected="selected"{/if}>2002款</option>
+    <option {if $ctype.ctype_year eq '2001款'}selected="selected"{/if}>2001款</option>
+    <option {if $ctype.ctype_year eq '2000款'}selected="selected"{/if}>2000款</option>
+    
+    </select>
+    </td>
+  </tr>
+  
+        <tr>
+    <td class="label">发动机</td>
+    <td><input type="text" name="ctype_eg" size="40" value="{$ctype.ctype_eg}">
+    </td>
+  </tr>
+  
+      <tr>
+    <td class="label">变速</td>
+    <td><input type="radio" name="ctype_vs" checked="checked" value="AT">AT
+    <input type="radio" name="ctype_vs" value="MT" {if $ctype.ctype_vs eq 'MT'}checked="checked"{/if}>MT
+    
+    </td>
+  </tr>
+  
+    
+    <tr>
+    <td class="label">驱动</td>
+    <td><input type="radio" name="ctype_dv" checked="checked"  value="前驱">前驱
+    <input type="radio" name="ctype_dv"  value="后驱" {if $ctype.ctype_dv eq '后驱'}checked="checked"{/if}>后驱
+    <input type="radio" name="ctype_dv" value="四驱" {if $ctype.ctype_dv eq '四驱'}checked="checked"{/if}>四驱
+    </td>
+  </tr>
+  
+    <tr>
+    <td class="label">车体</td>
+    <td><input type="radio" name="ctype_bd" checked="checked" value="两厢">两厢
+    <input type="radio" name="ctype_bd" value="三厢" {if $ctype.ctype_bd eq '三厢'}checked="checked"{/if}>三厢
+    </td>
+  </tr>
+  
+
+    <tr>
+    <td class="label">配型</td>
+    <td><input type="text" name="ctype_px" size="40" value="{$ctype.ctype_px}">
+    </td>
+  </tr>
+  
+  
+  <tr>
+    <td class="label">车款名称</td>
+    <td><input type="text" name="ctype_name" size="40" value="{$ctype.ctype_name}">
+    </td>
+  </tr>
+
+ <tr>
+    <td class="label">车款主图</td>
+    <td><input type="file" name="ctype_pic" size="45" value="">
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" align="center"><br />
+      <input type="hidden" name = "ctid" value="{$ctype.id}" />
+      <input type="hidden" name = "old_img" value="{$ctype.ctype_pic}" />
+      <input type="submit" class="button" value="{$lang.button_submit}" />
+    </td>
+  </tr>
+</table>
+</form>
+
+</div>
+{include file="pagefooter.htm"}
+<script type="text/javascript">
+
+function callbrand(bid){
+	Ajax.call('/car.php?act=ibrand','bid='+bid, cbResponse, 'POST', 'JSON');
+}
+function cbResponse(result){
+	var obj=document.getElementById('cx');
+	obj.options.length=0;
+	obj.options.add(new Option("请选择车系", "0"));
+	for (i = 0; i <result.length; i ++ )
+    {
+    obj.options.add(new Option(result[i].csys_name, result[i].id)); //这个兼容IE与firefox
+	}
+	
+}
+
+
+</script>

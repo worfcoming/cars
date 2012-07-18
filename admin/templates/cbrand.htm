@@ -1,0 +1,25 @@
+{include file="pageheader.htm"}
+<div class="list-div" id="listDiv">
+<table cellpadding="3" cellspacing="1">
+    <tr>
+      <th>首字母</th>
+      <th>品牌名称</th>
+      <th>是否显示</th>
+      <th>操作</th>
+    </tr>
+    {foreach from=$cbrand item=cb}
+    <tr>
+      <td align="center">{$cb.alpha}</td>
+      <td align="center">{$cb.cbrand_name}</td>
+      <td align="center">{if $cb.cbrand_sort eq '1'}是{else}否{/if}</td>
+      <td align="center">
+        <a href="cbrand.php?act=cb_edit&id={$cb.id}">编辑</a> |
+        <a href="javascript:;" onclick="" >移除</a> 
+      </td>
+    </tr>
+    {foreachelse}
+    <tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr>
+    {/foreach}
+  </table>
+  </div>
+{include file="pagefooter.htm"}
